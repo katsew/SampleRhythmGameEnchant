@@ -12,7 +12,8 @@
     "image": "cp -R ./source/assets/image ./dist/assets/",
     "views": "jade -P -o ./dist/ ./source/views/",
     "copyAssets": "rm -rf ./dist/assets/sounds && rm -rf ./dist/assets/image && npm run engine && npm run sounds && npm run image",
-    "build": "npm run browserify && npm run copyAssets && npm run views",
+    "initDir": "rm -rf ./dist && mkdir -p ./dist/assets/js",
+    "build": "npm run initDir && npm run browserify && npm run copyAssets && npm run views",
     "start": "http-server ./dist -p 9090"
   },
   "devDependencies": {

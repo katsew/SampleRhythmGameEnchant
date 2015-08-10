@@ -67,7 +67,6 @@ Game.onload = function () {
 
   Game.rootScene.addEventListener('enterframe', function () {
 
-    console.log(' --- enterframe --- ');
     if (Music.status === "playing") {
 
       if (conductor.isNoteGenerateTiming()) {

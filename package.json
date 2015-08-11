@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run watch:js & npm run watch:views",
     "watch:js": "watchify ./source/assets/js/Main.js -t babelify --outfile ./dist/assets/js/index.js",
     "watch:views": "watch 'npm run views' ./source/views/",
     "browserify": "browserify ./source/assets/js/Main.js -t babelify --outfile ./dist/assets/js/index.js",

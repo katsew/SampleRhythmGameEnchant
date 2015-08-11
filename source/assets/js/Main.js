@@ -22,8 +22,8 @@ enchant();
 //     }
 // });
 
-let Game = new enchant.Core(320, 480);
-Game.preload([
+let SampleRhythmGame = new enchant.Core(320, 568);
+SampleRhythmGame.preload([
   SoundEffect['effect01'],
   SoundEffect['effect02'],
   // BGM['bgm01'],
@@ -31,9 +31,9 @@ Game.preload([
   Images['note'],
   Images['judge']
 ]);
-Game.fps = 60;
+SampleRhythmGame.fps = 60;
 
-Game.onload = function () {
+SampleRhythmGame.onload = function () {
   let Music = {
     status: 'stop'
   };
@@ -43,29 +43,29 @@ Game.onload = function () {
   let Judge = null;
 
   // Background Music loaded
-  Music = Game.assets[BGM['bgm02']];
+  Music = SampleRhythmGame.assets[BGM['bgm02']];
 
   // Timing judgement Label created
   JudgementLabel = new Label();
   JudgementLabel.font = "36px Arial";
   JudgementLabel.x = 100;
   JudgementLabel.y = 100;
-  Game.rootScene.addChild(JudgementLabel);
+  SampleRhythmGame.rootScene.addChild(JudgementLabel);
 
   // Note icon loaded
-  Note = Game.assets[Images['note']];
+  Note = SampleRhythmGame.assets[Images['note']];
 
   // Instantiate conductor
-  conductor = new Conductor(Game, Music, JudgementLabel, Note);
+  conductor = new Conductor(SampleRhythmGame, Music, JudgementLabel, Note);
 
 
   Judge = new Sprite(82, 82);
-  Judge.image = Game.assets[Images['judge']];
+  Judge.image = SampleRhythmGame.assets[Images['judge']];
   Judge.x = 100;
   Judge.y = 380;
-  Game.rootScene.addChild(Judge);
+  SampleRhythmGame.rootScene.addChild(Judge);
 
-  Game.rootScene.addEventListener('enterframe', function () {
+  SampleRhythmGame.rootScene.addEventListener('enterframe', function () {
 
     if (Music.status === "playing") {
 
@@ -87,4 +87,4 @@ Game.onload = function () {
   Music.play();
 };
 
-Game.start();
+SampleRhythmGame.start();

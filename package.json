@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify ./source/assets/js/Main.js -t babelify --outfile ./dist/assets/js/index.js",
+    "watch:js": "watchify ./source/assets/js/Main.js -t babelify --outfile ./dist/assets/js/index.js",
+    "watch:views": "watch 'npm run views' ./source/views/",
     "browserify": "browserify ./source/assets/js/Main.js -t babelify --outfile ./dist/assets/js/index.js",
     "engine": "cp -R ./source/assets/engine ./dist/assets/",
     "sounds": "cp -R ./source/assets/sounds ./dist/assets/",
@@ -21,6 +22,7 @@
     "browserify": "^10.2.6",
     "http-server": "^0.8.0",
     "jade": "^1.11.0",
+    "watch": "^0.16.0",
     "watchify": "^3.2.3"
   },
   "author": "katsew",

@@ -28,11 +28,15 @@ import Stage01 from './Scenes/Stage01.js';
 //     }
 // });
 
-document.addEventListener('DOMContentLoaded', function () {
+window.onload = function () {
   enchant();
+  let win = window;
+  let doc = document;
+  let docWidth = doc.documentElement.clientWidth;
+  let docHeight = doc.documentElement.clientHeight;
   let timingData = [6.14, 7.486, 8.155, 9.977, 10.377, 11.611, 12.062, 13.583, 14.223, 15.059, 16.241, 17.425, 20.186, 21.593, 22.313, 23.123, 24.297, 25.113, 26.148, 27.294, 28.103, 30.910, 31.601, 32.305, 33.024, 34.054, 35.360, 36.140, 37.028, 38.402, 39.129, 40.354, 41.051, 42.233, 43.043, 44.261, 45.705, 46.448, 47.416, 48.407, 50.158, 51.310, 52.363, 53.031, 54.417, 55.288, 56.472, 57.190, 58.110, 59.095, 60.776, 61.993, 62.370, 63.072, 64.493, 65.111, 66.414, 67.192, 68.891, 69.209, 70.056, 71.111, 72.861, 73.263, 74.639, 75.090, 75.941, 76.472, 76.992];
   let timingData2 = [5.486, 9.155, 12.977, 14.377, 19.611, 20.062, 23.123, 24.297, 25.303, 28.408, 30.110, 31.601, 33.305, 34.454, 35.960, 37.40, 39.402, 41.354, 42.151, 43.233, 44.261, 46.705, 48.448, 49.416, 50.407, 52.310, 53.231, 54.917, 56.288, 58.472, 59.190, 60.110, 61.993, 63.370, 64.072, 64.993, 65.211, 66.414, 67.222, 68.891, 69.209, 70.056, 73.111, 75.861, 77.090, 79.340];
-  let SampleRhythmGame = new enchant.Core(Constants.DOCUMENT_WIDTH, Constants.DOCUMENT_HEIGHT);
+  let SampleRhythmGame = new enchant.Core(docWidth, docHeight);
   let stage01 = new Stage01();
 
   SampleRhythmGame.preload([
@@ -43,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     Images['note'],
     Images['judge']
   ]);
-  SampleRhythmGame.fps = 30;
+  SampleRhythmGame.fps = 60;
 
   SampleRhythmGame.onload = function () {
     let Music = {
@@ -114,4 +118,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   SampleRhythmGame.start();
 
-});
+};
